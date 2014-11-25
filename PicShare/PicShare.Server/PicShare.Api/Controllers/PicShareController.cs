@@ -9,6 +9,7 @@ using PicShare.Data.Repositories;
 
 namespace PicShare.Api.Controllers
 {
+     [RoutePrefix("api")]
     public class PicShareController : ApiController
     {
         private  readonly AuthRepository _authRepository;
@@ -57,7 +58,7 @@ namespace PicShare.Api.Controllers
         }
 
         [AllowAnonymous]
-        [Route("Account/Register")]
+        [Route("Account")]
         public async Task<IHttpActionResult> PostRegister(UserModel userModel)
         {
             if (!ModelState.IsValid)
@@ -107,7 +108,7 @@ namespace PicShare.Api.Controllers
 
         //GET to Pictures
         [AllowAnonymous]
-        [Route("Products")]
+        [Route("Pictures", Name = "GetPictures")]
         public async Task<List<PictureModel>> GetPicturesAsync(int page = 1, int size = 20)
         {
             //Get chats for the user (Chat Name, Last Updated On, Last Message)
@@ -129,7 +130,7 @@ namespace PicShare.Api.Controllers
 
             if (result.Id > 0)
             {
-                return CreatedAtRoute("GetPictureById", new {pictureId = result.Id}, PictureModel.ToModel(result));
+                return CreatedAtRoute("GetPictures", new {}, PictureModel.ToModel(result));
             }
 
             return InternalServerError();

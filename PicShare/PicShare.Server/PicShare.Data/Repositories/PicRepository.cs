@@ -46,6 +46,7 @@ namespace PicShare.Data.Repositories
         public async Task<List<Picture>> GetPicturesAsync(int pageNumber, int pageSize)
         {
             var products = await _ctx.Pictures
+                .Include("AddedBy")
                 .OrderByDescending(product => product.Id)
                 .Skip(pageSize*(pageNumber - 1))
                 .Take(pageSize)
