@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity.Spatial;
 
 namespace PicShare.Data.Entities
 {
@@ -9,5 +10,7 @@ namespace PicShare.Data.Entities
         public Account AddedBy { get; set; }
 
         public DateTime? AddedOn { get; set; }
+
+        public DbGeography Location { get; set; }
     }
 }

@@ -119,14 +119,17 @@ namespace PicShare.Api.Controllers
         //POST to Pictures
         [Authorize]
         [Route("Pictures")]
-        public async Task<IHttpActionResult> PostProductPicture()
+        public async Task<IHttpActionResult> PostProductPicture([FromUri] double lat, [FromUri] double lng)
         {
             var picturesStorageAccount = ConfigHelper.GetAppSetting("PicturesStorageAccount", "");
             var picturesStorageKey = ConfigHelper.GetAppSetting("PicturesStorageKey", "");
             var picturesContainer = ConfigHelper.GetAppSetting("PicturesContainer", "pics");
             var file = await Request.Content.ReadAsStreamAsync();
 
-            var result = await _picRepository.UploadPictureAsync(AccountId, picturesStorageAccount, picturesStorageKey, picturesContainer, file);
+            var result =
+                await
+                    _picRepository.UploadPictureAsync(AccountId, picturesStorageAccount, picturesStorageKey,
+                        picturesContainer, file, lat, lng);
 
             if (result.Id > 0)
             {

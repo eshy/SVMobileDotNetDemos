@@ -82,9 +82,14 @@
     <Compile Include="Entities\Account.cs" />
     <Compile Include="Entities\Picture.cs" />
     <Compile Include="Helpers\FileHelperMethods.cs" />
+    <Compile Include="Helpers\GeoHelperMethods.cs" />
     <Compile Include="Migrations\201411252040322_Initial.cs" />
     <Compile Include="Migrations\201411252040322_Initial.Designer.cs">
       <DependentUpon>201411252040322_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412170121061_AddGeoToPicture.cs" />
+    <Compile Include="Migrations\201412170121061_AddGeoToPicture.Designer.cs">
+      <DependentUpon>201412170121061_AddGeoToPicture.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -94,6 +99,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201411252040322_Initial.resx">
       <DependentUpon>201411252040322_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412170121061_AddGeoToPicture.resx">
+      <DependentUpon>201412170121061_AddGeoToPicture.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.IO;
 using System.Linq;
+using System.Spatial;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -25,13 +26,18 @@ namespace PicShare.Data.Repositories
         }
 
         public async Task<Picture> UploadPictureAsync(string accountId, string azureAccount,
-            string azureKey, string container, Stream file)
+            string azureKey, string container, Stream file, double lat, double lng)
         {
             var picture = new Picture
             {
                 AddedBy = await _userManager.FindByIdAsync(accountId),
                 AddedOn = DateTime.UtcNow
             };
+
+            if (lng != 0 && lat != 0)
+            {
+                picture.Location = GeoHelperMethods.GetGeoFromLatLong(lat, lng);
+            }
 
             _ctx.Pictures.Add(picture);
 
