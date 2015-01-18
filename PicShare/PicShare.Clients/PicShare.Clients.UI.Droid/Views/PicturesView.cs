@@ -13,22 +13,4 @@ namespace PicShare.Clients.UI.Droid.Views
             SetContentView(Resource.Layout.PicturesView);
         }
     }
-
-    [Activity]
-    public class SignUpView : MvxActivity
-    {
-        protected override void OnCreate(Bundle bundle)
-        {
-            base.OnCreate(bundle);
-            SetContentView(Resource.Layout.SignUpView);
-        }
-    }    [Activity]
-    public class AddNewPictureView : MvxActivity
-    {
-        protected override void OnCreate(Bundle bundle)
-        {
-            base.OnCreate(bundle);
-            SetContentView(Resource.Layout.AddNewPictureView);
-        }
-    }
 }
