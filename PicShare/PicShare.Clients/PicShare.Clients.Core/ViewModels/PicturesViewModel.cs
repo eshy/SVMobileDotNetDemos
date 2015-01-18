@@ -1,4 +1,5 @@
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Cirrious.MvvmCross.ViewModels;
 using PicShare.Clients.Core.Model;
@@ -34,10 +35,26 @@ namespace PicShare.Clients.Core.ViewModels
         {
             base.Start();
 
+            await LoadFirstPage();
+        }
+
+        //Call LoadFirstPage when the view is loaded the first time and when refreshing the list (clears the list and loads page 1)
+        private async Task LoadFirstPage()
+        {
             CurrentPage = 1;
+            await LoadListItems();
+        }
+
+        private async Task LoadListItems()
+        {
             var pictures = await _apiClient.GetPicturesAsync(CurrentPage, PageSize);
-            
-            ListItems.Clear();
+
+            //if loading the first page, clear the list, if not, just add the items to the existing list
+            if (CurrentPage == 1)
+            {
+                ListItems.Clear();
+            }
+
             foreach (var picture in pictures)
             {
                 ListItems.Add(picture);
@@ -50,14 +67,15 @@ namespace PicShare.Clients.Core.ViewModels
 
         public ICommand AddPictureCommand
         {
-            get { return new MvxCommand(TakePicture); }
+            get { return new MvxCommand(AddPicture); }
         }
 
-        private void TakePicture()
+        private void AddPicture()
         {
             ShowViewModel<AddNewPictureViewModel>();
         }
-
+
+        //TODO: Create commands for loading the next/previous pages
 
         #endregion
     }

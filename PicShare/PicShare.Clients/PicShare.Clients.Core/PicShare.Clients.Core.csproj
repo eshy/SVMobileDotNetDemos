@@ -39,12 +39,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="Model\AccountModel.cs" />
     <Compile Include="Model\PictureModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\Class1.cs" />
+    <Compile Include="Services\PicShareApiClient.cs" />
+    <Compile Include="Services\IPicShareApiClient.cs" />
     <Compile Include="ViewModels\AddNewPictureViewModel.cs" />
     <Compile Include="ViewModels\PicturesViewModel.cs" />
     <Compile Include="ViewModels\SignUpViewModel.cs" />
@@ -80,9 +80,6 @@
     <Reference Include="System.Net.Http.Primitives">
       <HintPath>..\packages\Microsoft.Net.Http.2.2.22\lib\portable-net40+sl4+win8+wp71+wpa81\System.Net.Http.Primitives.dll</HintPath>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="ToDo-MvvmCross\_ Core.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
