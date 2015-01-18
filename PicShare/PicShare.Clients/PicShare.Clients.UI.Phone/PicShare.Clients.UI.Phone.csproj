@@ -203,11 +203,13 @@
     <Reference Include="Cirrious.MvvmCross.WindowsPhone">
       <HintPath>..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.5.0\lib\wp8\Cirrious.MvvmCross.WindowsPhone.dll</HintPath>
     </Reference>
-    <Reference Include="EShyMedia.MvvmCross.Plugins.Settings">
-      <HintPath>..\packages\EShyMedia.MvvmCross.Plugins.Settings.1.0.0-beta4\lib\wp8\EShyMedia.MvvmCross.Plugins.Settings.dll</HintPath>
+    <Reference Include="EShyMedia.MvvmCross.Plugins.Settings, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EShyMedia.MvvmCross.Plugins.Settings.1.0.0\lib\wp8\EShyMedia.MvvmCross.Plugins.Settings.dll</HintPath>
     </Reference>
     <Reference Include="EShyMedia.MvvmCross.Plugins.Settings.WindowsPhone">
-      <HintPath>..\packages\EShyMedia.MvvmCross.Plugins.Settings.1.0.0-beta4\lib\wp8\EShyMedia.MvvmCross.Plugins.Settings.WindowsPhone.dll</HintPath>
+      <HintPath>..\packages\EShyMedia.MvvmCross.Plugins.Settings.1.0.0\lib\wp8\EShyMedia.MvvmCross.Plugins.Settings.WindowsPhone.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>

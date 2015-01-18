@@ -90,11 +90,12 @@
       <HintPath>..\packages\MvvmCross.HotTuna.Plugin.PictureChooser.3.5.0\lib\MonoAndroid\Cirrious.MvvmCross.Plugins.PictureChooser.Droid.dll</HintPath>
     </Reference>
     <Reference Include="EShyMedia.MvvmCross.Plugins.Settings">
-      <HintPath>..\packages\EShyMedia.MvvmCross.Plugins.Settings.1.0.0-beta4\lib\MonoAndroid\EShyMedia.MvvmCross.Plugins.Settings.dll</HintPath>
-    </Reference>
-    <Reference Include="EShyMedia.MvvmCross.Plugins.Settings.Droid">
-      <HintPath>..\packages\EShyMedia.MvvmCross.Plugins.Settings.1.0.0-beta4\lib\MonoAndroid\EShyMedia.MvvmCross.Plugins.Settings.Droid.dll</HintPath>
+      <HintPath>..\packages\EShyMedia.MvvmCross.Plugins.Settings.1.0.0\lib\MonoAndroid\EShyMedia.MvvmCross.Plugins.Settings.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="EShyMedia.MvvmCross.Plugins.Settings.Droid, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EShyMedia.MvvmCross.Plugins.Settings.1.0.0\lib\MonoAndroid\EShyMedia.MvvmCross.Plugins.Settings.Droid.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
