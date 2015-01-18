@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+  <LinearLayout
+      android:orientation="vertical"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+      <TextView
+          android:text="Nickname:"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="3"
+          android:id="@+id/NickNameLabel" />
+      <AutoCompleteTextView
+          android:id="@+id/NickNameText"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="7"
+          android:completionThreshold="1"
+          android:imeOptions="actionNext"
+          android:inputType="textPersonName"
+          android:nextFocusDown="@+id/PasswordText"
+          local:MvxBind="Text NickName" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+      <TextView
+          android:text="Password:"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="3"
+          android:id="@+id/PasswordLabel" />
+      <EditText
+          android:id="@+id/PasswordText"
+          android:inputType="textPassword"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="7"
+          android:imeOptions="actionDone"
+          android:nextFocusDown="@+id/DisplayNameText"
+          local:MvxBind="Text Password" />
+    </LinearLayout>
+    <Button
+        android:text="Sign Up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/SignUpButton"
+        local:MvxBind="Click SignUpCommand"
+        android:minWidth="100dp"
+        android:layout_gravity="center" />
+  </LinearLayout>
+</RelativeLayout>
